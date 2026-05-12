@@ -68,8 +68,8 @@ function main() { # Define the main function that contains all script logic
 				# --autostash temporarily saves local changes
 
 				echo "[ERROR] Failed to pull/rebase from remote repository." # Show error message
-				echo "         Possible causes: merge conflicts, network issues, or auth failure."
-				echo "         Action: Resolve manually and rerun script."
+				echo "Possible causes: merge conflicts, network issues, or auth failure."
+				echo "Action: Resolve manually and rerun script."
 
 				sleep "${CHECK_INTERVAL_SECONDS}" # Wait before retrying
 
@@ -134,8 +134,8 @@ function main() { # Define the main function that contains all script logic
 				# If push fails
 
 				echo "[ERROR] Failed to push changes to remote repository." # Error message
-				echo "         Possible causes: authentication failure, protected branch, or network issues."
-				echo "         Action: Verify credentials and repository permissions."
+				echo "Possible causes: authentication failure, protected branch, or network issues."
+				echo "Action: Verify credentials and repository permissions."
 			fi # End git push block
 		fi  # End trigger condition check
 
