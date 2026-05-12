@@ -372,6 +372,8 @@ func downloadAllHistoricalReleases(alreadyDownloaded map[string]bool) error {
 			log.Printf("Could not resolve ZIP URL on %s: %v — skipping", fullReleasePageURL, err)
 			continue
 		}
+		// Pause execution for 1 minute to allow time-based throttling or scheduled retry logic.
+		time.Sleep(1 * time.Minute)
 		processZipURL(fullZipURL, alreadyDownloaded) // Download, unzip, log
 	}
 	return nil
