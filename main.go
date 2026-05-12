@@ -213,6 +213,8 @@ func downloadLatestRelease(alreadyDownloaded map[string]bool) error { // functio
 	if err != nil {                                                    // check if URL resolution failed
 		return fmt.Errorf("could not resolve ZIP URL: %w", err) // return error
 	}
+	// Pause execution for 1 minute to allow time-based throttling or scheduled retry logic.
+	time.Sleep(1 * time.Minute)
 	processZipURL(fullZipURL, alreadyDownloaded) // download and process the ZIP file
 	return nil                                   // return nil to indicate success
 }
